@@ -1,6 +1,10 @@
 require 'rubygems'
+require 'bundler'
 require 'sinatra'
-require 'application'
+Bundler.require
+
+
+require './application'
 
 
 run WebApp
