@@ -2,11 +2,15 @@ require 'rubygems'
 require 'sinatra'
 # require 'debugger'
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 class WebApp < Sinatra::Base
   
   set :static, true
   set :public_folder, File.dirname(__FILE__) + '/public'
-  set :environment, :development
+#  set :environment, :development
   set :logging, :true
 
   get '/' do
